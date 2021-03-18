@@ -1,0 +1,17 @@
+name: "helloworld"
+
+replicaCount: 3
+
+
+env:
+  - name: SECRET_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: env-secret
+        key: username
+  - name: SECRET_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: env-secret
+        key: password
+
