@@ -18,9 +18,5 @@ spec:
           env:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       restartPolicy: OnFailure
   backoffLimit: 4
